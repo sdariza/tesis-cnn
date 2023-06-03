@@ -1,0 +1,4 @@
+*.png
+gfgModel/
+__pycache__/
+*.nc

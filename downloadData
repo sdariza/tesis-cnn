@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "Ingresa el año de inicio: " start_year
+current_year=$(date +'%Y')
+
+mkdir -p data
+
+for (( year=start_year; year<=current_year; year++ ))
+do
+    url="https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis2/pressure/air.${year}.nc"
+    wget -P data $url
+done
