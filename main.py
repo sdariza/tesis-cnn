@@ -26,7 +26,7 @@ Y = np.load('train_data/air.2018-2023_H6.npy')
 
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.3, random_state=123)
 
-history = model.fit(X_train,Y_train, epochs=150, shuffle=True, validation_data=(X_test,Y_test), batch_size=25, verbose=1)
+history = model.fit(X_train,Y_train, epochs=150, shuffle=True, validation_data=(X_test,Y_test), batch_size=32, verbose=1)
 
 # Save model
 tf.keras.saving.save_model(model, 'gfgModel')
