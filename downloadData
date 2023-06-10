@@ -7,6 +7,15 @@ mkdir -p data
 
 for (( year=start_year; year<=current_year; year++ ))
 do
-    url="https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis2/pressure/air.${year}.nc"
-    wget -P data $url
+
+    u_wind_url="https://downloads.psl.noaa.gov//Datasets/ncep.reanalysis2/pressure/uwnd.${year}.nc"
+    v_wind_url="https://downloads.psl.noaa.gov//Datasets/ncep.reanalysis2/pressure/vwnd.${year}.nc"
+    air_url="https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis2/pressure/air.${year}.nc"
+    hum_url="https://downloads.psl.noaa.gov//Datasets/ncep.reanalysis2/pressure/rhum.${year}.nc"
+
+    wget -P data/u_wind $u_wind_url
+    wget -P data/v_wind $v_wind_url
+    wget -P data/air $air_url
+    wget -P data/hum $hum_url
+
 done
